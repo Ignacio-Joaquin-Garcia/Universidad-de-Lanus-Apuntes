@@ -1,0 +1,41 @@
+Algoritmo matematica
+	definir a Como Entero;
+	definir b Como Entero;
+	definir TipoCalculo Como Logico;
+	definir TipoSuma Como Logico;
+	definir TipoMultiplicacion Como Logico;
+	definir simbolo Como Caracter;
+	definir total Como Real;
+	
+	Escribir "ingrese el primer numero a hacer calculo";
+	leer a;
+	Escribir "ingrese el segundo numero";
+	leer b;
+	
+	Escribir  "Si desea hacer una suma o resta indique (V), si desea hacer una multiplicacion/division indique (F)";
+	leer TipoCalculo;
+	si(TipoCalculo = Verdadero)
+		Escribir "Si desea hacer suma ponga V, sino ponga F";
+		leer TipoSuma;
+		si(TipoSuma = Verdadero)
+			total <- a + b;
+			simbolo <- "+";
+		SiNo
+			total <- a - b;
+			simbolo <- "-";
+		FinSi
+	SiNo
+		Escribir "Si desea hacer una multiplicacion ponga V, sino ponga F";
+		leer TipoMultiplicacion;
+		si(TipoMultiplicacion = Verdadero)
+			total <- a * b;
+			simbolo <- "x";
+		SiNo
+			total <- a / b;
+			simbolo <- "/";
+		FinSi
+	FinSi
+	
+	Escribir a, simbolo, b, "=", total;
+	
+FinAlgoritmo

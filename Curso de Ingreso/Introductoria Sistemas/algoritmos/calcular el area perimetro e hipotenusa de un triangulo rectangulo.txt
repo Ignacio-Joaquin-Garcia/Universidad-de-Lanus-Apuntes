@@ -1,0 +1,20 @@
+Algoritmo triangulo_rectangulo
+	definir catetoMenor Como Entero;
+	definir catetoMayor Como Entero;
+	
+	definir hipotenusa Como Real;
+	definir perimetro Como Real;
+	definir area Como Real;
+	
+	Escribir "Ingrese el cateto menor";
+	Leer catetoMenor;
+	Escribir "Ingrese el catetoMayor";
+	Leer catetoMayor;
+	
+	hipotenusa <- raiz(catetoMenor^2 + catetoMayor^2);
+	perimetro <- catetoMenor + catetoMayor + hipotenusa;
+	area <- (catetoMenor * catetoMayor) / 2;
+	
+	Escribir "La hipotenusa del triangulo rectangulo es de: ", hipotenusa, "el perimetro de: ", perimetro, "y el area de: ", area;
+	
+FinAlgoritmo
