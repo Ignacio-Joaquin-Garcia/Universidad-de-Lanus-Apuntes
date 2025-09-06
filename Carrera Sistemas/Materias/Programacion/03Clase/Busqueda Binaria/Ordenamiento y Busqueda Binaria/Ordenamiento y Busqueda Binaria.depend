@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1757117988 source:d:\facultad\unla\carrera sistemas\materias\programacion\03clase\busqueda binaria\ordenamiento y busqueda binaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
