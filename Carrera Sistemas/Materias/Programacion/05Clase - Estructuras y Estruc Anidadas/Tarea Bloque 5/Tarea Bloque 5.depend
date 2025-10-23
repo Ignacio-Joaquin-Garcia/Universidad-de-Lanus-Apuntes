@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1758087177 source:d:\facultad\unla\carrera sistemas\materias\programacion\05clase\tarea bloque 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"funciones.h"
+
+1758087254 d:\facultad\unla\carrera sistemas\materias\programacion\05clase\tarea bloque 5\funciones.h
+
+1758087243 source:d:\facultad\unla\carrera sistemas\materias\programacion\05clase\tarea bloque 5\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"funciones.h"
+

@@ -1,0 +1,44 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Thu Oct 23 03:55:40 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000040
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00001f      
+            32 out of 1093 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             checkButtons   0x000006    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+           delay2Segundos   0x000013    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+            delayOverflow   0x000015    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              delayPreesc   0x000017    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+                delayTmr0   0x000019    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              manejarLedB   0x00000f    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              prenderLedA   0x00000d    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             checkButtons   0x000006    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              prenderLedA   0x00000d    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              manejarLedB   0x00000f    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+           delay2Segundos   0x000013    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+            delayOverflow   0x000015    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+              delayPreesc   0x000017    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+                delayTmr0   0x000019    program     static D:\Facultad\UNLa\Carrera Sistemas\Materias\Arquitectura de Computadoras - Roberto Garcia\Programacion Assembler\TestButton\testButton.asm
+
+

@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1759104736 source:d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\funciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1760163743 source:d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\listapersonas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaPersonas.h"
+
+1760163773 d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\listapersonas.h
+	"Personas.h"
+
+1760162971 d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\personas.h
+	"Vehiculo.h"
+
+1760162635 d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\vehiculo.h
+	"Vehiculo.h"
+
+1760163773 source:d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+	"Vehiculo.h"
+	"Personas.h"
+	"ListaPersonas.h"
+
+1759101198 d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\funciones.h
+
+1760163346 source:d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\personas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+	"Personas.h"
+
+1760162635 source:d:\facultad\unla\carrera sistemas\materias\programacion\07clase - punteros\vehiculo.c
+	"Vehiculo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+

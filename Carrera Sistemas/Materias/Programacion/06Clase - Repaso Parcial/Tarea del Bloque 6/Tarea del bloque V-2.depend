@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1759105300 source:d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+	"Vehiculo.h"
+	"Personas.h"
+	"ListaPersonas.h"
+
+1759105368 d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\vehiculo.h
+	"Vehiculo.h"
+
+1759105399 source:d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\vehiculo.c
+	"Vehiculo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
+1759104736 source:d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\funciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1759101198 d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\funciones.h
+
+1759105484 d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\personas.h
+	"Vehiculo.h"
+
+1759105484 source:d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\personas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+	"Personas.h"
+
+1759105322 d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\listapersonas.h
+	"Personas.h"
+
+1759105300 source:d:\facultad\unla\carrera sistemas\materias\programacion\06clase - repaso parcial\tarea del bloque 6\listapersonas.c
+	"ListaPersonas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1757372299 source:d:\facultad\unla\carrera sistemas\materias\programacion\03clase\busqueda binaria\tarea del bloque 4. clase 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1757366003 source:d:\facultad\unla\carrera sistemas\materias\programacion\03clase\busqueda binaria\tarea del bloque 4. clase 5\funciones.c
+	"funciones.h"
+	<time.h>
+
+1757366003 d:\facultad\unla\carrera sistemas\materias\programacion\03clase\busqueda binaria\tarea del bloque 4. clase 5\funciones.h
+
+1757453042 source:d:\facultad\unla\carrera sistemas\materias\programacion\04clase\tarea del bloque 4. clase 5\funciones.c
+	"funciones.h"
+
+1757451703 d:\facultad\unla\carrera sistemas\materias\programacion\04clase\tarea del bloque 4. clase 5\funciones.h
+
+1757452896 source:d:\facultad\unla\carrera sistemas\materias\programacion\04clase\tarea del bloque 4. clase 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"funciones.h"
+
