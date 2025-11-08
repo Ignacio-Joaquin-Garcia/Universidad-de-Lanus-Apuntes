@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1762579031 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

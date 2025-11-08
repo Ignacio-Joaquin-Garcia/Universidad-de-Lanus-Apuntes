@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1762577492 source:d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"funciones.h"
+	"nodo.h"
+	"lista.h"
+
+1762495547 d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\nodo.h
+
+1762495576 source:d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1762577337 d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\lista.h
+	"nodo.h"
+
+1762577443 source:d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"lista.h"
+	"funciones.h"
+
+1762577297 source:d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1762577296 d:\facultad\unla\carrera sistemas\materias\programacion\09clase - listas (nodos)\listaspractica\funciones.h
+

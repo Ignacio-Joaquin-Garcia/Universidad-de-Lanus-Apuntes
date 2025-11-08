@@ -36,7 +36,7 @@ manejarLedB:
 	return
 	
 delay2Segundos:
-	MOVLW d'30'
+	MOVLW d'1'
 	MOVWF overflows
 delayOverflow:
 	MOVLW d'255'

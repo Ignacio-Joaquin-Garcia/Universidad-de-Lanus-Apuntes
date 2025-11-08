@@ -1,4 +1,4 @@
-MPASM  5.31                    TESTBUTTON.ASM   10-23-2025  3:55:39         PAGE  1
+MPASM  5.31                    TESTBUTTON.ASM   10-30-2025  14:43:01         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -56,8 +56,8 @@ Warning[203]: Found opcode in column 1. (BCF)
 0012   0008           00036         return
                       00037         
 0013                  00038 delay2Segundos:
-0013   301E           00039         MOVLW d'30'
-MPASM  5.31                    TESTBUTTON.ASM   10-23-2025  3:55:39         PAGE  2
+0013   3001           00039         MOVLW d'1'
+MPASM  5.31                    TESTBUTTON.ASM   10-30-2025  14:43:01         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -81,7 +81,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00055 
 Warning[205]: Found directive in column 1. (END)
                       00056 END
-MPASM  5.31                    TESTBUTTON.ASM   10-23-2025  3:55:39         PAGE  3
+MPASM  5.31                    TESTBUTTON.ASM   10-30-2025  14:43:01         PAGE  3
 
 
 SYMBOL TABLE
@@ -140,7 +140,7 @@ _HS_OSC                           00003FFE
 _LP_OSC                           00003FFC
 _PWRTE_OFF                        00003FFF
 _PWRTE_ON                         00003FF7
-MPASM  5.31                    TESTBUTTON.ASM   10-23-2025  3:55:39         PAGE  4
+MPASM  5.31                    TESTBUTTON.ASM   10-30-2025  14:43:01         PAGE  4
 
 
 SYMBOL TABLE
