@@ -1,0 +1,33 @@
+--Comida--
+Nombre Comida: Patys
+Identificador: 1
+	--Receta--
+	Paso: 0
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 9
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 10
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 18
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 31
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 39
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 57
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 62
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 68
+	Descripcion: RANDOM
+	--Receta--
+	Paso: 74
+	Descripcion: RANDOM

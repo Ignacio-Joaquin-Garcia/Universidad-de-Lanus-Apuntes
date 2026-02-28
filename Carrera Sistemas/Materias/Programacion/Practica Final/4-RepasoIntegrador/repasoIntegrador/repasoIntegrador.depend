@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1764571053 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\4-repasointegrador\repasointegrador\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<math.h>
+

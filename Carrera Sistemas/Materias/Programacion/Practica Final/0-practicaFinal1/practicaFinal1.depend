@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1764052494 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"personaje.h"
+	"caricatura.h"
+	"canalInfantil.h"
+	"nodo.h"
+	"lista.h"
+
+1764052405 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\personaje.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"personaje.h"
+
+1764051921 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\personaje.h
+
+1764052210 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\caricatura.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"caricatura.h"
+
+1764052041 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\caricatura.h
+	"personaje.h"
+
+1764052154 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\canalinfantil.h
+	"personaje.h"
+	"caricatura.h"
+
+1764052466 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\canalinfantil.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"canalInfantil.h"
+
+1764052287 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\lista.c
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1764052268 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\nodo.c
+	"nodo.h"
+	"personaje.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1764052268 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\nodo.h
+	"personaje.h"
+
+1764051172 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\practicafinal1\lista.h
+	"nodo.h"
+	"caricatura.h"
+
+1764052466 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\canalinfantil.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"canalInfantil.h"
+
+1764052154 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\canalinfantil.h
+	"personaje.h"
+	"caricatura.h"
+
+1764051921 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\personaje.h
+
+1764052041 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\caricatura.h
+	"personaje.h"
+
+1764052210 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\caricatura.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"caricatura.h"
+
+1764478232 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\lista.c
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1764051172 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\lista.h
+	"nodo.h"
+	"caricatura.h"
+
+1764052268 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\nodo.h
+	"personaje.h"
+
+1764477712 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"personaje.h"
+	"caricatura.h"
+	"canalInfantil.h"
+	"nodo.h"
+	"lista.h"
+
+1764052268 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\nodo.c
+	"nodo.h"
+	"personaje.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1764052405 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\0-practicafinal1\personaje.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"personaje.h"
+

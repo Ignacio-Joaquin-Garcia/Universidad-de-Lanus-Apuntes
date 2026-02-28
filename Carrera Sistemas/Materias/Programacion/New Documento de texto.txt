@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "funciones.h"
+
+int main()
+{
+    //Matrices
+    srand(time(0));
+    /*int fila=5;
+    int columna=10;
+    int matriz[fila][columna];
+    cargarMatriz(fila,columna,matriz);
+    mostrarMatriz(fila,columna,matriz);
+    ordenarMatriz(fila,columna,matriz);
+    printf("\n-------------------------\n");
+    mostrarMatriz(fila,columna,matriz);
+    int posicion[2];
+    int encontrado=buscar(fila,columna,matriz,10,posicion);
+    if(encontrado==1){
+    printf("El numero esta en la fila %d columna %d",posicion[0],posicion[1]);
+    }else{
+    printf("No se encontro");
+    }*/
+    int tam=50;
+    int arreglo1[tam];
+    cargarVector(tam,arreglo1);
+    mostrarVector(tam,arreglo1);
+    int arreglo2[tam];
+    int pos=eliminarRepetidos(tam,arreglo1,arreglo2);
+    printf("\n----------------\n");
+    mostrarVector(pos,arreglo2);
+    return 0;
+} 
+
+15:14
+
+
+
+Julian Tomczak says:#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
+
+void cargarMatriz(int f,int c,int matriz[f][c]);
+void mostrarMatriz(int f,int c,int matriz[f][c]);
+void ordenarMatriz(int f,int c,int matriz[f][c]);
+int buscar(int f,int c,int matriz[f][c],int numero,int pos[2]);
+void cargarVector(int t,int vec[t]);
+void mostrarVector(int t,int vec[t]);
+int eliminarRepetidos(int tam, int arreglo[tam],int arregloSinRepetidos[tam]);
+
+#endif // FUNCIONES_H_INCLUDED 
+
+15:14
+
+Julian Tomczak says:#include <stdio.h>
+#include <stdlib.h>
+#include "funciones.h"
+
+void cargarMatriz(int f,int c,int matriz[f][c])
+{
+    for(int i=0; i<f; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            matriz[i][j]= rand()%101; //enteros entre 1 y 100
+            //matriz[i][j] =( (float)rand()/RAND_MAX)
+            //  * 100;
+        }
+    }
+};
+
+void mostrarMatriz(int f,int c,int matriz[f][c])
+{
+    for(int i=0; i<f; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            printf("%d ",matriz[i][j]);
+        }
+        printf("\n");
+    }
+};
+
+void ordenarMatriz(int f,int c,int matriz[f][c])
+{
+    float aux;
+    for(int i=0; i<f; i++)
+    {
+        for(int j=0; j<c-1; j++)
+        {
+            for(int k=0; k<c-j-1; k++)
+            {
+                if(matriz[i][k]>matriz[i][k+1])
+                {
+                    aux=matriz[i][k];
+                    matriz[i][k]=matriz[i][k+1];
+                    matriz[i][k+1]=aux;
+                }
+            }
+        }
+
+    }
+};
+
+int buscar(int f,int c,int matriz[f][c],int numero,int pos[2])
+{
+    int encontrado=0;
+    for(int i=0; i<f; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            if(matriz[i][j]==numero)
+            {
+                pos[0]=i;
+                pos[1]=j;
+                encontrado=1;
+            }
+        }
+    }
+    return encontrado;
+};
+
+void cargarVector(int t,int vec[t])
+{
+    for(int i=0; i<t; i++)
+    {
+        vec[i]=rand()%51;
+    }
+};
+void mostrarVector(int t, int vec[t])
+{
+    for(int i=0; i<t; i++)
+    {
+        printf("%d ",vec[i]);
+    }
+    printf("\n");
+};
+int eliminarRepetidos(int tam, int arreglo[tam],int arregloSinRepetidos[tam])
+{
+    int pos=1;
+    arregloSinRepetidos[0]=arreglo[0];
+    for(int i=0; i<tam; i++)
+    {
+       int esta=0;
+       for(int j=0;j<tam;j++){
+         if(arreglo[i]==arregloSinRepetidos[j]){
+            esta=1;
+         }
+       }
+       if(esta==0){
+       arregloSinRepetidos[pos]=arreglo[i];
+       pos++;
+       }
+    }
+    return pos-1;
+}; 

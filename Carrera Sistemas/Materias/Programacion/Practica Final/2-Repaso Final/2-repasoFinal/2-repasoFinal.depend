@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1764361466 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\2-repaso final\2-repasofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+	"lista.h"
+
+1764361466 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\2-repaso final\2-repasofinal\lista.c
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+
+1764361466 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\2-repaso final\2-repasofinal\lista.h
+	"nodo.h"
+
+1764361466 d:\facultad\unla\carrera sistemas\materias\programacion\practica final\2-repaso final\2-repasofinal\nodo.h
+
+1764361466 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\2-repaso final\2-repasofinal\nodo.c
+	"nodo.h"
+	<stdio.h>
+	<stdlib.h>
+

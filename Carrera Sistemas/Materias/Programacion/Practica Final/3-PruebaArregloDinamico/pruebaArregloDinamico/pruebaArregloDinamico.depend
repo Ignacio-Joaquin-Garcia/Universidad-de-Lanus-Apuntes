@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1764478684 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\3-pruebaarreglodinamico\pruebaarreglodinamico\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

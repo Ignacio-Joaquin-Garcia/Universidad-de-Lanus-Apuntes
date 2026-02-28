@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1764614156 source:/home/estudiante/Documentos/DNI46940086-Garca_Ignacio_joaquin-Perez/DNI46940086-GarciaIgnacioJoaquin-Perez/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"titulos.h"
+	"jugador.h"
+
+1764613703 /home/estudiante/Documentos/DNI46940086-Garca_Ignacio_joaquin-Perez/DNI46940086-GarciaIgnacioJoaquin-Perez/titulos.h
+
+1764613594 /home/estudiante/Documentos/DNI46940086-Garca_Ignacio_joaquin-Perez/DNI46940086-GarciaIgnacioJoaquin-Perez/jugador.h
+	"titulos.h"
+
+1764614260 source:/home/estudiante/Documentos/DNI46940086-Garca_Ignacio_joaquin-Perez/DNI46940086-GarciaIgnacioJoaquin-Perez/jugador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"titulos.h"
+	"jugador.h"
+
+1764614170 source:/home/estudiante/Documentos/DNI46940086-Garca_Ignacio_joaquin-Perez/DNI46940086-GarciaIgnacioJoaquin-Perez/titulos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"titulos.h"
+

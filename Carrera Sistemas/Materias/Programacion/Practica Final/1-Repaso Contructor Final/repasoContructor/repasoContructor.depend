@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1764355888 source:d:\facultad\unla\carrera sistemas\materias\programacion\practica final\repaso contructor final\repasocontructor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<math.h>
+

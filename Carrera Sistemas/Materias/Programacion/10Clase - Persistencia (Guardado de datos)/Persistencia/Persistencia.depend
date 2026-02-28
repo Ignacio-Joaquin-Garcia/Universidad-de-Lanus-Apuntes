@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1763887257 source:d:\facultad\unla\carrera sistemas\materias\programacion\10clase - persistencia (guardado de datos)\persistencia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
