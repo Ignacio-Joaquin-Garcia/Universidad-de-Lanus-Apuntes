@@ -154,3 +154,38 @@ int eliminarRepetidos(int tam, int arreglo[tam],int arregloSinRepetidos[tam])
     }
     return pos-1;
 }; 
+
+
+
+int eliminarDuplicadosVector(int tam, int vectorCopiar[], int nuevoVector[]){
+    int contador = 0;
+    int numRepetido;
+
+    int vectorDeRepetidos[tam];
+    for(int i = 0; i<tam;i++){
+        vectorDeRepetidos[i] = 0;
+    }
+
+    for(int i=0;i<tam;i++){
+        numRepetido = 0;
+
+        for(int j=0;j<tam;j++){
+            if(j != i){
+                if(vectorCopiar[i] == vectorCopiar[j]){
+                    numRepetido = 1;
+                    vectorDeRepetidos[i] = vectorCopiar[i];
+                }
+            }
+        }
+        if(numRepetido == 1){
+            contador--;
+        }
+        if(numRepetido == 0){
+            nuevoVector[contador] = vectorCopiar[i];
+        }
+        contador++;
+    }
+    return contador;
+};
+
+
