@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1775191262 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	"Funciones.h"
+	"Carton.h"
+	"Persona.h"
+	"PersonasEnJuego.h"
+
+1775166007 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\carton.h
+	"Funciones.h"
+
+1775191244 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	"Persona.h"
+
+1775192299 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\personasenjuego.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	"PersonasEnJuego.h"
+
+1775186963 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	"Funciones.h"
+
+1775186884 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\funciones.h
+
+1775167509 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\persona.h
+	"Funciones.h"
+	"Carton.h"
+
+1775192299 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\personasenjuego.h
+	"Funciones.h"
+	"Persona.h"
+
+1775192004 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\01 - clase (nivelacion - repaso)\tarea clase 1 - repaso\carton.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	"Carton.h"
+

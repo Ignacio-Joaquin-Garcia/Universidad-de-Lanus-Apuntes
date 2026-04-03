@@ -1,0 +1,5 @@
+El programa funciona mediante 3 structs anidados. 
+struct PersonasEnJuego contiene Personas las cuales contienen Cartones
+debido a tiempos no programe que una persona pueda poseer mas de un carton. Pero las PersonasEnJuego o lista de juego puede contener varias personas utilizando memoria dinámica, elegí no usar listas ya que me pareció que las listas eran demasiado robustas para este caso.
+Si bien el código funciona perfectamente, si hubiera hecho un planteamiento de sistema desde el inicio hubiera planteado que Cartones posean Personas. De esta manera hubiera sido muchísimo mas sencilla la programación.
+El programa cuenta con un funcionamiento de fechas basado en la fecha de la maquina y la fecha en la que se compra el carton, por favor actualiza la fecha en la que compra el carton cuando testee el programa!

@@ -1,0 +1,13 @@
+20.00;Coca
+20.00;Coca
+200.00;Pizza
+36.00;Gin
+20.00;Coca
+200.00;Pizza
+36.00;Gin20.00;Coca
+20.00;Coca
+200.00;Pizza
+36.00;Gin
+20.00;Coca
+200.00;Pizza
+36.00;Gin2.00;pepsi
