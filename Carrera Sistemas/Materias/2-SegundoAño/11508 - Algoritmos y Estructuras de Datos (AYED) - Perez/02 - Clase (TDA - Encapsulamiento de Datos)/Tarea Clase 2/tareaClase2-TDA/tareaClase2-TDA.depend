@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1775624446 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\dispositivostec.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"DispositivosTec.h"
+
+1775623499 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\dispositivostec.h
+
+1775624307 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"Empleado.h"
+
+1775623622 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\persona.h
+	"DispositivosTec.h"
+
+1775623650 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"Persona.h"
+
+1775624221 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"Empleado.h"
+
+1775624221 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\02 - clase (tda - encapsulamiento de datos)\tarea clase 2\tareaclase2-tda\empleado.h
+	"Persona.h"
+

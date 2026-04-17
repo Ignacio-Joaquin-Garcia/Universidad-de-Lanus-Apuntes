@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1776462102 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\03 - clase (repaso vectores dinamicos)\tareaclase3-vectoresdinamicostda\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<math.h>
+	"vectores.h"
+	"matrices.h"
+
+1776398588 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\03 - clase (repaso vectores dinamicos)\tareaclase3-vectoresdinamicostda\vectores.h
+
+1776399048 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\03 - clase (repaso vectores dinamicos)\tareaclase3-vectoresdinamicostda\vectores.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<math.h>
+	"vectores.h"
+
+1776462613 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\03 - clase (repaso vectores dinamicos)\tareaclase3-vectoresdinamicostda\matrices.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<math.h>
+	"vectores.h"
+	"matrices.h"
+
+1776462613 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\03 - clase (repaso vectores dinamicos)\tareaclase3-vectoresdinamicostda\matrices.h
+

@@ -1,0 +1,5 @@
+*.layout
+*.cbp
+*.workspace
+.metadata/
+eclispe-workspace/.metadata/

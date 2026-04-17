@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1712869179 source:c:\users\nperez\desktop\fechascontda\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+
+1712869234 source:c:\users\nperez\desktop\fechascontda\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+
+1712869234 c:\users\nperez\desktop\fechascontda\fecha.h
+

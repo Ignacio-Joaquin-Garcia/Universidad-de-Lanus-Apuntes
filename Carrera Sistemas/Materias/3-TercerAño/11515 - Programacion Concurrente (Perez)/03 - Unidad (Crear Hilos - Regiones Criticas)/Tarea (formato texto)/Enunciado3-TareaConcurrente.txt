@@ -1,0 +1,148 @@
+package test;
+
+import java.util.Random;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Enunciado3Concurrente{
+	//Propiedades
+	private static int tam = 100;
+	private static int[] vector = new int[tam];
+	static AtomicInteger contadorImpares = new AtomicInteger(0); //Region Critica
+	private static int cantHilos = 0;
+	
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+	
+	//Constructor
+	
+	
+	//Metodos
+	public static void cargarVector(int[] v, int t, Random r) {
+		for(int i = 0; i< t; i++) {
+			v[i] = r.nextInt(0, 11);
+		}
+	}
+	public static void mostrarVector(int[] v, int t) {
+		System.out.print("Vector = [\n");
+		for(int i = 0; i< t; i++) {
+			switch(i) {
+				case 20:
+					System.out.print("\n");
+					break;
+				case 40:
+					System.out.print("\n");
+					break;
+				case 60:
+					System.out.print("\n");
+					break;
+				case 80:
+					System.out.print("\n");
+					break;
+				default:
+					break;
+			}
+			if(i != t-1) {
+				System.out.print(v[i] + ", ");
+			} else {
+				System.out.print(v[i] + "\n]\n");
+			}
+		}
+	}
+	public static void trabajoPesado(int empieza, int termina) {
+		for(int i = empieza; i < termina; i++) {
+			if(vector[i] % 2 != 0) {
+				contadorImpares.incrementAndGet(); //Region Critica, Sincronizacion Atomica
+			}
+		}
+	}
+	public static void calculoTiempoSecuencial() {
+		int contadorImparesSecuencial;
+		long tiempoEmpiezanSecuencial = System.nanoTime();
+		System.out.println("\n\n" + timestamp() + " Comienza Conteo Secuencial");
+		trabajoPesado(0, tam);
+		System.out.println(timestamp() + " Termina Conteo Secuencial");
+		long tiempoTerminanSecuencial = System.nanoTime();
+		contadorImparesSecuencial = contadorImpares.get();
+		contadorImpares.set(0);
+		long tiempoProcesoSecuencial = (tiempoTerminanSecuencial - tiempoEmpiezanSecuencial) / 1_000_000;
+		System.out.println("Cantidad de Impares = " + contadorImparesSecuencial);
+		System.out.println("Tiempo de Calculo Secuencial (Incluye tiempo de prints + SO) = " + tiempoProcesoSecuencial + " ms\n\n");
+	}
+    //Timestamp
+    public static String timestamp() {
+        return LocalTime.now().format(formatter);
+    }
+    
+	//MAIN
+	public static void main(String[] args) {
+		Random rIns = new Random(System.nanoTime());
+		cargarVector(vector, tam, rIns);
+		mostrarVector(vector, tam);
+		
+		//Calculo de Tiempo Secuencial
+		calculoTiempoSecuencial();
+	
+		//DECLARACION
+		cantHilos = rIns.nextInt(5, 11);
+		MiHilo[] hilos = new MiHilo[cantHilos];
+		
+		//CREACION
+		int inicio = 0;
+		int termina = tam;
+		int terminaHilo = termina / cantHilos;
+		for(int i = 0; i<cantHilos; i++) {
+			if(i == cantHilos - 1){
+				terminaHilo = tam;
+		    }
+			hilos[i] = new MiHilo(inicio, terminaHilo, i);
+
+			inicio = terminaHilo;
+			terminaHilo += termina / cantHilos; 
+		}
+		
+		//LANZAMIENTO
+		long tiempoTerminanHilos;
+		long tiempoEmpiezanHilos = System.nanoTime();
+		for(int i = 0; i<cantHilos; i++) {
+			hilos[i].start();		
+		}
+		
+		//ESPERA
+		try {
+			for(int i = 0; i<cantHilos; i++) {
+				hilos[i].join();
+			}
+		}catch(Exception e){System.out.println(e);}
+		tiempoTerminanHilos = System.nanoTime();
+		
+		//RESULTADOS
+		long tiempoProcesoHilos = (tiempoTerminanHilos - tiempoEmpiezanHilos) / 1_000_000;
+		System.out.println("Cantidad de Hilos Generados = " + cantHilos);
+		System.out.println("Cantidad de Impares = " + contadorImpares);
+		System.out.println("Tiempo de Calculo Concurrente (Incluye tiempo de prints + SO) = " + tiempoProcesoHilos + " ms");
+	}
+
+	//Clases Hijas
+	public static class MiHilo extends Thread{
+		private int empieza;
+		private int termina;
+		private int id;
+		
+		public MiHilo(int empieza, int termina, int id) {
+			super();
+			this.empieza = empieza;
+			this.termina = termina;
+			this.id = id;
+		}
+		
+		@Override
+		public void run() {
+			System.out.println(timestamp() +" 🔺Empezo Hilo: " +  id);
+			//Carga Pesada
+			trabajoPesado(empieza, termina);
+			System.out.println(timestamp() + " 🟢Termino Hilo: " +  id);
+		}
+		
+	}
+}
