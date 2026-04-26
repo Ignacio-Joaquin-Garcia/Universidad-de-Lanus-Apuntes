@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Enunciado3Concurrente{
 	//Propiedades
-	private static int tam = 100;
+	private static int tam = 10;
 	private static int[] vector = new int[tam];
 	static AtomicInteger contadorImpares = new AtomicInteger(0); //Region Critica
 	private static int cantHilos = 0;

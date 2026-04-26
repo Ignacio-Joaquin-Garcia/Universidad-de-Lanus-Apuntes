@@ -3,3 +3,5 @@
 *.workspace
 .metadata/
 eclispe-workspace/.metadata/
+.mp4
+.mov
