@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run ejemplo_1 - Concurrencia Básica Unsafe",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_1/concurrencia_basica_unsafe.go"
+        },
+        {
+            "name": "Run ejemplo_2 - Concurrencia con Mutex",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_2/concurrencia_mutex.go"
+        },
+        {
+            "name": "Run ejemplo_3 - Concurrencia Atómica",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_3/concurrencia_atomica.go"
+        },
+        {
+            "name": "Run ejemplo_4 - Comparativa de Rendimiento",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_4/comparativa_rendimiento.go"
+        },
+        {
+            "name": "Run ejemplo_5 - Procesamiento Paralelo Array",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_5/procesamiento_paralelo_array.go"
+        },
+        {
+            "name": "Run ejemplo_6 - Canales Básico",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_6/canales_basico.go"
+        },
+        {
+            "name": "Run ejemplo_7 - Worker Pool",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_7/worker_pool.go"
+        }
+    ]
+}

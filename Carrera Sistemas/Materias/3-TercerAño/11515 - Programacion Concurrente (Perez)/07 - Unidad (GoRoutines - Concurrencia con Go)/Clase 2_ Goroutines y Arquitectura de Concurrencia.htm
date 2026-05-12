@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: Goroutines y Arquitectura de Concurrencia</title>
+    <script src="Clase%202_%20Goroutines%20y%20Arquitectura%20de%20Concurrencia_files/3.4.17"></script>
+    <link rel="stylesheet" href="Clase%202_%20Goroutines%20y%20Arquitectura%20de%20Concurrencia_files/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s;
+            overflow: hidden;
+        }
+
+        pre,
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            overflow-x: auto;
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            font-size: 0.85rem;
+            border: 1px solid #333;
+        }
+
+        .keyword {
+            color: #569cd6;
+        }
+
+        .string {
+            color: #ce9178;
+        }
+
+        .comment {
+            color: #6a9955;
+        }
+
+        .function {
+            color: #dcdcaa;
+        }
+
+        .number {
+            color: #b5cea8;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #06b6d4;
+            transition: width 0.3s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-btn:hover {
+            background: #f8fafc;
+            transform: scale(1.1);
+            color: #06b6d4;
+        }
+
+        .gopher-img {
+            width: 130px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        .comparison-box {
+            transition: all 0.3s ease;
+        }
+
+        .comparison-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .so-diagram {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 650px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.bottom-10{bottom:2.5rem}.left-0{left:0px}.right-0{right:0px}.z-40{z-index:40}.mx-auto{margin-left:auto;margin-right:auto}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-4{margin-top:1rem}.flex{display:flex}.grid{display:grid}.h-6{height:1.5rem}.w-0\.5{width:0.125rem}.w-28{width:7rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-around{justify-content:space-around}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.self-center{align-self:center}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b-2{border-bottom-width:2px}.border-l-4{border-left-width:4px}.border-t-4{border-top-width:4px}.border-t-8{border-top-width:8px}.border-dashed{border-style:dashed}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-cyan-100{--tw-border-opacity:1;border-color:rgb(207 250 254 / var(--tw-border-opacity, 1))}.border-cyan-200{--tw-border-opacity:1;border-color:rgb(165 243 252 / var(--tw-border-opacity, 1))}.border-cyan-400{--tw-border-opacity:1;border-color:rgb(34 211 238 / var(--tw-border-opacity, 1))}.border-cyan-500{--tw-border-opacity:1;border-color:rgb(6 182 212 / var(--tw-border-opacity, 1))}.border-green-100{--tw-border-opacity:1;border-color:rgb(220 252 231 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-900{--tw-border-opacity:1;border-color:rgb(15 23 42 / var(--tw-border-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-cyan-400{--tw-bg-opacity:1;background-color:rgb(34 211 238 / var(--tw-bg-opacity, 1))}.bg-cyan-50{--tw-bg-opacity:1;background-color:rgb(236 254 255 / var(--tw-bg-opacity, 1))}.bg-cyan-700{--tw-bg-opacity:1;background-color:rgb(14 116 144 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-300{--tw-bg-opacity:1;background-color:rgb(203 213 225 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-10{padding:2.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pb-2{padding-bottom:0.5rem}.pb-4{padding-bottom:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-9xl{font-size:8rem;line-height:1}.text-\[0\.7rem\]{font-size:0.7rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[13px\]{font-size:13px}.text-\[8px\]{font-size:8px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-cyan-300{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-cyan-50{--tw-text-opacity:1;color:rgb(236 254 255 / var(--tw-text-opacity, 1))}.text-cyan-600{--tw-text-opacity:1;color:rgb(8 145 178 / var(--tw-text-opacity, 1))}.text-cyan-700{--tw-text-opacity:1;color:rgb(14 116 144 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <div id="app">
+        <div class="progress-bar" id="progress" style="width: 7.14286%;"></div>
+
+        <div class="slide active" id="slide-0">
+            <div class="flex flex-col items-center">
+                <i class="fas fa-rocket text-cyan-600 text-9xl mb-6"></i>
+                <h1 class="text-5xl font-black mb-4 text-center leading-tight">Clase 2: <span class="text-cyan-600">Goroutines</span></h1>
+                <p class="text-2xl font-light text-slate-500 mb-8">Arquitectura y Fundamentos de Concurrencia</p>
+                <div class="text-sm text-slate-400 font-mono italic">Programación Concurrente</div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-1">
+            <div class="max-w-5xl">
+                <h2 class="text-3xl font-bold mb-6 text-slate-800 border-b-2 border-cyan-500 pb-2">Concurrencia vs
+                    Paralelismo</h2>
+                <p class="text-lg text-slate-600 mb-8 italic">"La concurrencia es acerca de la estructura, el
+                    paralelismo es acerca de la ejecución".</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="font-bold text-cyan-700 mb-4 text-xl">Concurrencia</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Manejar múltiples tareas que
+                            <strong>pueden</strong> ejecutarse al mismo tiempo. Es un concepto de diseño de software.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl text-white shadow-xl">
+                        <h3 class="font-bold text-cyan-400 mb-4 text-xl">Paralelismo</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">Ejecutar múltiples tareas físicamente a la
+                            vez. Requiere hardware con múltiples núcleos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-2">
+            <h2 class="text-3xl font-bold mb-6 text-slate-800 text-center">Repaso SO: Procesos e Hilos</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl w-full">
+                <div class="so-diagram shadow-lg flex flex-col justify-center">
+                    <div class="bg-blue-600 text-white p-3 rounded-lg text-center font-bold mb-4 shadow-sm">PROCESO
+                        PADRE (PCB)</div>
+                    <div class="grid grid-cols-3 gap-2 mb-6">
+                        <div class="bg-blue-50 border border-blue-200 p-3 text-center rounded-lg">
+                            <i class="fas fa-code text-blue-500 mb-1"></i><br><span class="text-[10px] font-bold">CÓDIGO</span>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 p-3 text-center rounded-lg">
+                            <i class="fas fa-database text-blue-500 mb-1"></i><br><span class="text-[10px] font-bold">DATOS</span>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 p-3 text-center rounded-lg">
+                            <i class="fas fa-memory text-blue-500 mb-1"></i><br><span class="text-[10px] font-bold">HEAP</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-around">
+                        <div class="bg-white border-2 border-dashed border-cyan-400 p-3 rounded-xl text-center w-28">
+                            <span class="text-[10px] font-black text-cyan-600">HILO 1</span>
+                            <div class="h-6 w-0.5 bg-cyan-400 mx-auto my-2"></div>
+                            <div class="text-[8px] bg-slate-100 p-1 rounded">Stack / Regs</div>
+                        </div>
+                        <div class="bg-white border-2 border-dashed border-cyan-400 p-3 rounded-xl text-center w-28 text-slate-400">
+                            <span class="text-[10px] font-black">HILO 2</span>
+                            <div class="h-6 w-0.5 bg-slate-300 mx-auto my-2"></div>
+                            <div class="text-[8px] bg-slate-50 p-1 rounded">Stack / Regs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center space-y-4">
+                    <div class="bg-white p-5 rounded-2xl border shadow-sm">
+                        <h4 class="font-bold text-blue-600 mb-1"><i class="fas fa-share-alt mr-2"></i>Recursos
+                            Compartidos</h4>
+                        <p class="text-sm text-slate-600">Los hilos comparten el <strong>Heap</strong>, el código y las
+                            variables globales. Esto permite comunicación rápida pero requiere sincronización.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border shadow-sm">
+                        <h4 class="font-bold text-cyan-600 mb-1"><i class="fas fa-user-tag mr-2"></i>Estado Privado</h4>
+                        <p class="text-sm text-slate-600">Cada hilo mantiene su propio <strong>Stack</strong> y
+                            registros (Contador de programa) para su ejecución independiente.</p>
+                    </div>
+                    <i class="fas fa-microscope text-slate-300 text-5xl self-center"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide" id="slide-3">
+            <h2 class="text-3xl font-bold mb-10 text-center">¿Qué es una Goroutine?</h2>
+            <div class="max-w-4xl w-full space-y-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <p class="text-2xl text-slate-700 leading-relaxed">
+                        Es un <strong>hilo de ejecución ligero</strong> gestionado íntegramente por el runtime de Go.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-cyan-50 rounded-xl text-center border border-cyan-100 comparison-box">
+                        <i class="fas fa-feather-alt text-cyan-600 text-3xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Stack Dinámico</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Inician con 2KB y crecen según necesidad. Mucho más eficientes que hilos tradicionales.</p>
+                    </div>
+                    <div class="p-6 bg-cyan-50 rounded-xl text-center border border-cyan-100 comparison-box">
+                        <i class="fas fa-microchip text-cyan-600 text-3xl mb-4"></i>
+                        <h4 class="font-bold mb-2">M:N Scheduling</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Multiplexa miles de Goroutines sobre pocos hilos del SO de forma inteligente.</p>
+                    </div>
+                    <div class="p-6 bg-cyan-50 rounded-xl text-center border border-cyan-100 comparison-box">
+                        <i class="fas fa-bolt text-cyan-600 text-3xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Bajo Costo</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Context switch ultra rápido en espacio de usuario, sin intervención del Kernel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide" id="slide-4">
+            <h2 class="text-3xl font-bold mb-8">Lanzando Goroutines</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl w-full items-start">
+                <div class="space-y-6">
+                    <p class="text-slate-600 text-lg">Usamos la palabra clave <code>go</code>. Esto indica al Scheduler que ejecute la función de forma asíncrona.</p>
+                    <div class="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-400 shadow-sm">
+                        <h4 class="text-amber-900 font-bold mb-2 text-sm uppercase tracking-wider"><i class="fas fa-exclamation-triangle mr-2"></i> Punto Crítico</h4>
+                        <p class="text-sm text-amber-800 leading-relaxed">Si la función <code>main</code> termina, todas las demás Goroutines se detienen instantáneamente.</p>
+                    </div>
+                </div>
+                <div class="code-block">
+<pre><span class="keyword">func</span> <span class="function">saludar</span>(n <span class="keyword">string</span>) {
+    fmt.<span class="function">Println</span>(<span class="string">"Hola"</span>, n)
+}
+
+<span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="keyword">go</span> <span class="function">saludar</span>(<span class="string">"Estudiantes"</span>) 
+    
+    <span class="comment">// El programa terminará antes de</span>
+    <span class="comment">// que la goroutine pueda imprimir.</span>
+    fmt.<span class="function">Println</span>(<span class="string">"Fin del programa"</span>)
+}</pre>
+                </div>
+            </div>
+        </div>
+
+          <div class="slide" id="slide-5">
+            <h2 class="text-3xl font-bold mb-8 text-center">El Problema: time.Sleep</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl w-full">
+                <div class="space-y-4">
+                    <div class="bg-red-50 border border-red-100 p-5 rounded-2xl">
+                        <h3 class="text-red-600 font-bold mb-1 text-sm"><i class="fas fa-times-circle mr-2"></i> Incorrecto: time.Sleep</h3>
+                        <p class="text-[13px] text-slate-600">Adivinar tiempos es imposible y frágil bajo carga de servidor.</p>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 p-5 rounded-2xl">
+                        <h3 class="text-green-600 font-bold mb-1 text-sm"><i class="fas fa-check-circle mr-2"></i> Correcto: WaitGroup</h3>
+                        <p class="text-[13px] text-slate-600">Espera determinística. El programa dura exactamente lo necesario.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <div class="code-block">
+<pre><span class="comment">// ❌ EVITAR: Adivinar</span>
+<span class="keyword">go</span> <span class="function">trabajar</span>()
+time.<span class="function">Sleep</span>(time.Second)</pre>
+                    </div>
+                    <div class="code-block">
+<pre><span class="comment">// ✅ USAR: sync.WaitGroup</span>
+<span class="keyword">var</span> wg sync.WaitGroup
+wg.<span class="function">Add</span>(<span class="number">1</span>)
+<span class="keyword">go func</span>() {
+    <span class="keyword">defer</span> wg.<span class="function">Done</span>()
+    <span class="function">trabajar</span>()
+}()
+wg.<span class="function">Wait</span>()</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-6">
+            <h2 class="text-3xl font-bold mb-8 text-slate-800">Control de Flujo: <code>defer</code></h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl">
+                <div class="space-y-6">
+                    <p class="text-lg text-slate-600 italic">"Pospone la ejecución hasta que la función contenedora
+                        retorna."</p>
+                    <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                        <h4 class="font-bold text-blue-700 mb-3">¿Para qué sirve?</h4>
+                        <ul class="text-sm text-blue-600 space-y-2">
+                            <li><i class="fas fa-lock-open mr-2"></i> Liberar Mutex / Locks.</li>
+                            <li><i class="fas fa-file-export mr-2"></i> Cerrar archivos o sockets.</li>
+                            <li><i class="fas fa-check-circle mr-2"></i> Notificar fin de tareas (WaitGroups).</li>
+                            <li><i class="fas fa-shield-alt mr-2"></i> Garantizar limpieza incluso con panic.</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs text-slate-500 italic">Se ejecutan en orden LIFO (Last In, First Out).</p>
+                </div>
+                <div class="code-block">
+                    <pre><span class="keyword">func</span> <span class="function">proceso</span>() {
+    <span class="keyword">defer</span> fmt.<span class="function">Println</span>(<span class="string">"1º: Limpieza final"</span>)
+    <span class="keyword">defer</span> fmt.<span class="function">Println</span>(<span class="string">"2º: Cierre recursos"</span>)
+    fmt.<span class="function">Println</span>(<span class="string">"Trabajando..."</span>)
+}
+
+<span class="comment">// Salida:</span>
+<span class="comment">// Trabajando...</span>
+<span class="comment">// 2º: Cierre recursos</span>
+<span class="comment">// 1º: Limpieza final</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-7">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-600">Sincronización Determinística: WaitGroup</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl">
+                <div class="space-y-4">
+                    <p class="text-slate-600"><code>sync.WaitGroup</code> es un contador que bloquea el flujo hasta que
+                        llega a cero.</p>
+                    <div class="space-y-2">
+                        <div class="bg-white p-3 rounded-lg border text-sm"><strong>Add(n):</strong> Registra tareas
+                            pendientes.</div>
+                        <div class="bg-white p-3 rounded-lg border text-sm"><strong>Done():</strong> Indica que una
+                            tarea terminó.</div>
+                        <div class="bg-white p-3 rounded-lg border text-sm"><strong>Wait():</strong> Bloquea hasta que
+                            el contador es 0.</div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    <pre><span class="keyword">var</span> wg sync.WaitGroup
+
+wg.<span class="function">Add</span>(<span class="number">1</span>)
+<span class="keyword">go func</span>() {
+    <span class="keyword">defer</span> wg.<span class="function">Done</span>()
+    <span class="function">tareaPesada</span>()
+}()
+
+wg.<span class="function">Wait</span>() <span class="comment">// Main espera aquí</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-8">
+            <h2 class="text-3xl font-bold mb-8 text-red-600 text-center">Goroutine Leaks (Zombis)</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white p-10 rounded-3xl border-2 border-dashed border-red-200 text-center">
+                    <p class="text-xl text-slate-600 italic">"Una Goroutine bloqueada para siempre es memoria que nunca
+                        se recupera."</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-100 rounded-xl">
+                        <h4 class="font-bold mb-2">Causas</h4>
+                        <p class="text-xs text-slate-500">Esperar por canales que nadie escribe o bloqueos infinitos en
+                            WaitGroups.</p>
+                    </div>
+                    <div class="p-6 bg-slate-100 rounded-xl">
+                        <h4 class="font-bold mb-2">Consecuencia</h4>
+                        <p class="text-xs text-slate-500">Agotamiento de RAM (OOM Killer) en aplicaciones de larga
+                            duración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-9">
+            <h2 class="text-3xl font-bold mb-10 text-center">Arquitectura del Scheduler: M:P:N</h2>
+            <div class="flex flex-col items-center max-w-6xl w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-8 text-center">
+                    <div class="comparison-box bg-white p-6 rounded-2xl border-t-8 border-blue-500 shadow-sm">
+                        <h4 class="font-black text-3xl text-blue-600 mb-2">M</h4>
+                        <p class="text-[11px] font-bold text-slate-400 mb-3 tracking-widest">MACHINE</p>
+                        <p class="text-[10px] text-slate-600 leading-tight">Hilos reales del Sistema Operativo.
+                            Limitados (típicamente = CPUs).</p>
+                    </div>
+                    <div class="comparison-box bg-white p-6 rounded-2xl border-t-8 border-green-500 shadow-sm">
+                        <h4 class="font-black text-3xl text-green-600 mb-2">P</h4>
+                        <p class="text-[11px] font-bold text-slate-400 mb-3 tracking-widest">PROCESSOR</p>
+                        <p class="text-[10px] text-slate-600 leading-tight">Contextos lógicos. Controlados por
+                            GOMAXPROCS (por defecto = CPUs).</p>
+                    </div>
+                    <div class="comparison-box bg-white p-6 rounded-2xl border-t-8 border-cyan-500 shadow-sm">
+                        <h4 class="font-black text-3xl text-cyan-600 mb-2">G</h4>
+                        <p class="text-[11px] font-bold text-slate-400 mb-3 tracking-widest">GOROUTINE</p>
+                        <p class="text-[10px] text-slate-600 leading-tight">Nuestras tareas. Potencialmente millones.
+                            Distribuidas en Ps.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mb-6">
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-blue-700 mb-2 text-sm"><i class="fas fa-cog mr-2"></i> Relación</h4>
+                        <p class="text-xs text-blue-600">Típicamente: <strong>1 M : 1 P : N Gs</strong><br>Ejemplo: 8
+                            CPUs = 8 Ms = 8 Ps, pero millones de Gs distribuidas.</p>
+                    </div>
+                    <div class="bg-cyan-50 p-4 rounded-xl border border-cyan-200">
+                        <h4 class="font-bold text-cyan-700 mb-2 text-sm"><i class="fas fa-random mr-2"></i>
+                            Work-Stealing</h4>
+                        <p class="text-xs text-cyan-600">Si un P se queda sin Gs, roba trabajo de otra P para evitar
+                            ociosidad. Máxima eficiencia.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 text-cyan-300 p-4 rounded-xl w-full text-center font-mono text-xs shadow-lg border border-slate-700">
+                    Visualizar: <span class="text-cyan-400">GOMAXPROCS</span> indica cuántos Ps activos. Cambia
+                    dinámicamente con <span class="text-cyan-400">runtime.NumCPU()</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-10">
+            <h2 class="text-3xl font-bold mb-8 text-slate-800">Hilos OS (Java) vs Goroutines (Go)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-red-500 mb-4 italic">Java / C++ Threads</h3>
+                    <ul class="space-y-3 text-xs text-slate-600">
+                        <li><strong>Peso:</strong> Stack fijo (~1MB).</li>
+                        <li><strong>Gestión:</strong> Kernel del Sistema Operativo.</li>
+                        <li><strong>Costo:</strong> Cambio de contexto caro (Modo Kernel).</li>
+                        <li><strong>Mapeo:</strong> 1 Hilo Java : 1 Hilo OS.</li>
+                    </ul>
+                </div>
+                <div class="bg-cyan-700 p-6 rounded-2xl shadow-xl text-white">
+                    <h3 class="text-xl font-bold mb-4 italic">Go Goroutines</h3>
+                    <ul class="space-y-3 text-xs text-cyan-50">
+                        <li><strong>Peso:</strong> Stack dinámico (~2KB).</li>
+                        <li><strong>Gestión:</strong> Go Runtime (Espacio de Usuario).</li>
+                        <li><strong>Costo:</strong> Cambio de contexto muy barato.</li>
+                        <li><strong>Mapeo:</strong> N Goroutines : M Hilos OS.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+ <div class="slide" id="slide-11">
+            <h2 class="text-2xl font-bold mb-6 text-red-600 text-center">Errores Comunes y Soluciones</h2>
+            <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border-t-4 border-red-500 shadow-sm">
+                    <h4 class="font-bold text-slate-800 mb-2 text-sm">Error: Captura de Variable</h4>
+                    <div class="code-block mb-2 text-[0.7rem]">
+<pre><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ {
+    <span class="keyword">go func</span>() { fmt.<span class="function">Println</span>(i) }() <span class="comment">// Imprimirá 3, 3, 3</span>
+}</pre>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-t-4 border-green-500 shadow-sm">
+                    <h4 class="font-bold text-slate-800 mb-2 text-sm">Solución: Pasar por Parámetro</h4>
+                    <div class="code-block mb-2 text-[0.7rem]">
+<pre><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ {
+    <span class="keyword">go func</span>(v <span class="keyword">int</span>) { fmt.<span class="function">Println</span>(v) }(i) <span class="comment">// Correcto</span>
+}</pre>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-t-4 border-red-500 shadow-sm">
+                    <h4 class="font-bold text-slate-800 mb-2 text-sm">Error: WaitGroup fuera de tiempo</h4>
+                    <div class="code-block mb-2 text-[0.7rem]">
+<pre>wg.<span class="function">Add</span>(<span class="number">1</span>)
+<span class="keyword">go func</span>() { <span class="comment">// Olvidar wg.Done()</span>
+}()
+wg.<span class="function">Wait</span>() <span class="comment">// DEADLOCK!</span></pre>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-t-4 border-green-500 shadow-sm">
+                    <h4 class="font-bold text-slate-800 mb-2 text-sm">Solución: Defer Done</h4>
+                    <div class="code-block mb-2 text-[0.7rem]">
+<pre>wg.<span class="function">Add</span>(<span class="number">1</span>)
+<span class="keyword">go func</span>() {
+    <span class="keyword">defer</span> wg.<span class="function">Done</span>()
+    <span class="comment">// ...</span>
+}()</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 bg-amber-50 p-3 rounded-lg border border-amber-200 text-xs text-amber-800 max-w-4xl text-center">
+                <i class="fas fa-lightbulb mr-2"></i> Siempre usa el <strong>Race Detector</strong> de Go corriendo tus tests con el flag <code>-race</code>.
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide-12">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-700">Patrón: Procesamiento por Lotes</h2>
+            <div class="max-w-4xl w-full">
+                <div class="code-block">
+                    <pre><span class="keyword">func</span> <span class="function">main</span>() {
+    datos := []<span class="keyword">string</span>{<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>}
+    <span class="keyword">var</span> wg sync.WaitGroup
+
+    <span class="keyword">for</span> _, d := <span class="keyword">range</span> datos {
+        wg.<span class="function">Add</span>(<span class="number">1</span>)
+        <span class="keyword">go func</span>(v <span class="keyword">string</span>) {
+            <span class="keyword">defer</span> wg.<span class="function">Done</span>()
+            <span class="function">procesar</span>(v)
+        }(d) <span class="comment">// ¡Importante: pasar por copia!</span>
+    }
+
+    wg.<span class="function">Wait</span>()
+    fmt.<span class="function">Println</span>(<span class="string">"Lote finalizado"</span>)
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-13">
+            <h2 class="text-3xl font-bold mb-10 border-b-2 border-slate-900 pb-4">Resumen: Clase 2 🎯</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full text-slate-700">
+                <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-cyan-600 mb-2">✓ Fundamentos</h4>
+                    <p class="text-sm leading-relaxed">Las Goroutines son hilos ligeros gestionados por Go Runtime, no
+                        el SO. Permiten escribir código concurrente sin sacrificar eficiencia.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-cyan-600 mb-2">✓ Sincronización</h4>
+                    <p class="text-sm leading-relaxed">WaitGroup + defer es la pareja ganadora: registro de tareas,
+                        espera determinística y limpieza automática de recursos.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-cyan-600 mb-2">✓ Evitar Trampas</h4>
+                    <p class="text-sm leading-relaxed">Nunca uses time.Sleep para sincronización. Evita goroutine leaks
+                        siendo explícito con ciclos de vida y bloqueos.</p>
+                </div>
+                <div class="p-6 bg-cyan-700 text-white rounded-2xl shadow-2xl">
+                    <h4 class="font-bold mb-2">→ Próximo Paso</h4>
+                    <p class="text-sm leading-relaxed">Clase 3: Canales (channels). La forma idiomática de comunicar
+                        Goroutines y crear arquitecturas escalables.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed bottom-10 left-0 right-0 flex justify-center items-center gap-10 z-40">
+            <button onclick="prevSlide()" class="nav-btn"><i class="fas fa-chevron-left text-xl"></i></button>
+            <div class="bg-white px-6 py-2 rounded-full border shadow-sm font-mono text-sm font-bold" id="slide-counter">1 / 14</div>
+            <button onclick="nextSlide()" class="nav-btn"><i class="fas fa-chevron-right text-xl"></i></button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 14;
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('slide-counter');
+
+        function updateSlide() {
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i === currentSlide);
+            });
+            progress.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+            counter.innerText = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides - 1) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+
+
+</body></html>

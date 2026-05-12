@@ -1,0 +1,110 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run ejemplo_1 - Variables y Tipos",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_1/variables_tipos.go"
+        },
+        {
+            "name": "Run ejemplo_2 - Funciones",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_2/funciones.go"
+        },
+        {
+            "name": "Run ejemplo_3 - Bucles",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_3/bucle.go"
+        },
+        {
+            "name": "Run ejemplo_4 - Arrays y Slices",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_4/arrays_slices.go"
+        },
+        {
+            "name": "Run ejemplo_5 - Mapas",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_5/mapas.go"
+        },
+        {
+            "name": "Run ejemplo_6 - Estructuras",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_6/estructuras.go"
+        },
+        {
+            "name": "Run ejemplo_7 - Interfaces",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_7/interfaces.go"
+        },
+        {
+            "name": "Run ejemplo_8 - Errores",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_8/errores.go"
+        },
+        {
+            "name": "Run ejemplo_9 - Punteros",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ejemplo_9/punteros.go"
+        },
+        {
+            "name": "Run bigo_1 - O(1)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_1/o1.go"
+        },
+        {
+            "name": "Run bigo_2 - O(log n)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_2/ologn.go"
+        },
+        {
+            "name": "Run bigo_3 - O(n)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_3/on.go"
+        },
+        {
+            "name": "Run bigo_4 - O(n log n)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_4/onlogn.go"
+        },
+        {
+            "name": "Run bigo_5 - O(n²)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_5/on2.go"
+        },
+        {
+            "name": "Run bigo_6 - O(2^n)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/bigo_6/o2n.go"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+-- Crear una base de datos
+create database unla;
+
+-- Seleccionar con qué base de datos van a trabajar
+use unla;
+
+-- Borrar table
+drop table alumno;
+
+-- Crear tablas /alter
+create table alumno(
+    -- Atributos de la tabla
+	dni int UNSIGNED not null,
+    nombre varchar(40) not null,
+    apellido varchar(40) not null,
+    edad int null,
+    -- Llave primaria :) 
+    primary key(dni),
+    -- Llave foreneas
+    fk_id_curso int not null ,
+    fk_id_contacto int not null
+);
+
+
+create table tabla_intermedia(
+	fk_id_contacto int not null,
+    fk_id_curso int not null
+);
+
+
+
+
+-- Alumno tiene UN contacto
+create table contacto(
+	id_contacto int not null auto_increment primary key,
+    mail varchar(40) not null
+	
+);
+
+-- CURSO ---< ALUMNO
+create table curso(
+	id_curso int not null auto_increment primary key,
+    nombre varchar(30) not null
+);
+
+-- Generar las relaciones 
+-- 1 a muchos entre curso y alumno
+alter table alumno
+add constraint  curso_hay_muchos_alumnos    -- nombre de la relación 
+foreign key (fk_id_curso)
+references curso(id_curso);  -- TABLA(atributo_para_relacionar)
+
+--  1 a 1 entre alumno y contacto
+alter table alumno
+add constraint  alumno_tiene_un_contacto    -- nombre de la relación 
+foreign key (fk_id_contacto)
+references contacto(id_contacto);
+
+
+-- Muchos a muchos
+alter table tabla_intermedia
+add constraint  tabla_intermedia_curso   -- nombre de la relación 
+foreign key (fk_id_curso)
+references curso(id_curso); 
+
+alter table tabla_intermedia
+add constraint  tabla_intermedia_contacto   -- nombre de la relación 
+foreign key (fk_id_contacto)
+references contacto(id_contacto);
