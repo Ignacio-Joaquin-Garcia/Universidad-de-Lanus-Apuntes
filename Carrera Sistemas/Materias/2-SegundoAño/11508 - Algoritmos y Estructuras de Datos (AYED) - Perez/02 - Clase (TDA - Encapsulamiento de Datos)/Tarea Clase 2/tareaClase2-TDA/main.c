@@ -27,5 +27,8 @@ int main()
     setDni(getPersona(e1), 33000333);
     mostrarEmpleado(e1);
 
+    printf("nombre: %s", getNombre(p1));
+
+
     return 0;
 }

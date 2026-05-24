@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1716170153 source:c:\users\nico_\desktop\arbolbinario\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1716170153 c:\users\nico_\desktop\arbolbinario\arbol.h
+
+1716170154 source:c:\users\nico_\desktop\arbolbinario\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1779426788 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\arbolbinario\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1779426788 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\arbolbinario\arbol.h
+
+1779426788 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\arbolbinario\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+

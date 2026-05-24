@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1779568309 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\tarea-arbol-binario\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+	"Arbol.h"
+
+1779577043 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\tarea-arbol-binario\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"Arbol.h"
+
+1779569179 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\tarea-arbol-binario\arbol.h
+
+1779577197 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\tarea-arbol-binario\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Persona.h"
+
+1779577123 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\08 - clase (arboles)\tarea-arbol-binario\persona.h
+

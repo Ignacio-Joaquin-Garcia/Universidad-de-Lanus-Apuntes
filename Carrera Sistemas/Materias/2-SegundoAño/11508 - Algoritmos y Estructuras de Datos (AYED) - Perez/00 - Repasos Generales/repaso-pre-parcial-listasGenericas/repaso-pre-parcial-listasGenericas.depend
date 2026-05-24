@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1779426138 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\listasgenericas.c
+	<stdio.h>
+	<stdlib.h>
+	"ListasGenericas.h"
+
+1779426225 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListasGenericas.h"
+	"Motivos.h"
+	"Persona.h"
+
+1779425172 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"Nodo.h"
+
+1779222696 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\listasgenericas.h
+	"Nodo.h"
+
+1779222688 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\nodo.h
+
+1779426299 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasGenericas.h"
+	"Motivos.h"
+	"Persona.h"
+
+1779426177 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\persona.h
+
+1779426323 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\motivos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListasGenericas.h"
+	"Persona.h"
+
+1779425756 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\00 - repasos generales\repaso-pre-parcial-listasgenericas\motivos.h
+

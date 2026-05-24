@@ -94,3 +94,37 @@
 
 1778125269 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\persona.h
 
+1778125943 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+
+1778125895 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\lista.h
+	"nodo.h"
+
+1778101300 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\nodo.h
+
+1778102991 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1778125270 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"Persona.h"
+
+1778125269 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\persona.h
+
+1779510255 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+	"Persona.h"
+
