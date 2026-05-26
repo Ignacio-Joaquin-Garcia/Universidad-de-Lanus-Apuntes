@@ -1,0 +1,128 @@
+# depslib dependency file v1.0
+1722264391 source:/home/estudiante/Documentos/final_ayed_2do_llamado/main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"aeropuerto.h"
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+
+1722256318 /home/estudiante/Documentos/final_ayed_2do_llamado/pasajero.h
+
+1722259226 source:/home/estudiante/Documentos/final_ayed_2do_llamado/pasajero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pasajero.h"
+
+1722263082 source:/home/estudiante/Documentos/final_ayed_2do_llamado/lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1722263135 /home/estudiante/Documentos/final_ayed_2do_llamado/lista.h
+	"nodo.h"
+
+1722257031 /home/estudiante/Documentos/final_ayed_2do_llamado/nodo.h
+
+1722257044 source:/home/estudiante/Documentos/final_ayed_2do_llamado/nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1722264553 source:/home/estudiante/Documentos/final_ayed_2do_llamado/avion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+	"lista.h"
+
+1722264065 /home/estudiante/Documentos/final_ayed_2do_llamado/avion.h
+	"pasajero.h"
+
+1722262298 source:/home/estudiante/Documentos/final_ayed_2do_llamado/aeropuerto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+	"avion.h"
+	"aeropuerto.h"
+
+1722262155 /home/estudiante/Documentos/final_ayed_2do_llamado/aeropuerto.h
+	"avion.h"
+
+1722264284 source:/home/estudiante/Documentos/final_ayed_2do_llamado/destino.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destino.h"
+
+1722263727 /home/estudiante/Documentos/final_ayed_2do_llamado/destino.h
+
+1727148335 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/aeropuerto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+	"avion.h"
+	"aeropuerto.h"
+
+1727145046 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/lista.h
+	"nodo.h"
+
+1722257031 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/nodo.h
+
+1727146505 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/avion.h
+	"lista.h"
+	"pasajero.h"
+
+1727145339 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/pasajero.h
+
+1727146369 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/aeropuerto.h
+	"avion.h"
+
+1727148590 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/avion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+	"lista.h"
+
+1722263727 /home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/destino.h
+
+1722264284 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/destino.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destino.h"
+
+1727148335 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1722257044 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1727148335 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/pasajero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pasajero.h"
+
+1727147558 source:/home/nykolai/Descargas/SalgueiroEzequiel_FinalAYED2doLlamado/final_ayed_2do_llamado/main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"aeropuerto.h"
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+

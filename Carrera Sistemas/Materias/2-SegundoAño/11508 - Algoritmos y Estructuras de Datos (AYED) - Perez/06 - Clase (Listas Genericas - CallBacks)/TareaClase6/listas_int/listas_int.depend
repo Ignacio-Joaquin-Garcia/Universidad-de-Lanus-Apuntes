@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1692133862 source:c:\users\nperez\desktop\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1584205420 source:c:\users\nperez\desktop\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1692132787 source:c:\users\nperez\desktop\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1692132787 c:\users\nperez\desktop\listas_int\nodo.h
+
+1692133422 c:\users\nperez\desktop\listas_int\lista.h
+	"nodo.h"
+
+1776921949 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\04 - clase (listas)\tarea\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1776921949 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\04 - clase (listas)\tarea\listas_int\lista.h
+	"nodo.h"
+
+1776797141 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\04 - clase (listas)\tarea\listas_int\nodo.h
+
+1776921736 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\04 - clase (listas)\tarea\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1776921949 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\04 - clase (listas)\tarea\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1777528763 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\05 - clase (listas genericas - punteros a void)\05 tarea - punteros a void\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+
+1777528763 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\05 - clase (listas genericas - punteros a void)\05 tarea - punteros a void\listas_int\lista.h
+	"nodo.h"
+
+1777521316 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\05 - clase (listas genericas - punteros a void)\05 tarea - punteros a void\listas_int\nodo.h
+
+1777529077 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\05 - clase (listas genericas - punteros a void)\05 tarea - punteros a void\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+
+1777521886 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\05 - clase (listas genericas - punteros a void)\05 tarea - punteros a void\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1778125492 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+	"Persona.h"
+
+1778125895 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\lista.h
+	"nodo.h"
+
+1778101300 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\nodo.h
+
+1778102991 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1778125600 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+
+1778125270 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"Persona.h"
+
+1778125269 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\05 tarea - punteros a void\listas_int\persona.h
+
+1778125942 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+
+1778125894 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\lista.h
+	"nodo.h"
+
+1778101300 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\nodo.h
+
+1778125492 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"lista.h"
+	"Persona.h"
+
+1778125268 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\persona.h
+
+1778102990 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1778125270 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\tareaclase6\listas_int\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"Persona.h"
+

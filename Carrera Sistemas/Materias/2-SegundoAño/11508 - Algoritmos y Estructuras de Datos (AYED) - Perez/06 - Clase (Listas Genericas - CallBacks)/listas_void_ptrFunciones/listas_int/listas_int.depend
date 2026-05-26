@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1692133862 source:c:\users\nperez\desktop\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1584205420 source:c:\users\nperez\desktop\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1692132787 source:c:\users\nperez\desktop\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1692132787 c:\users\nperez\desktop\listas_int\nodo.h
+
+1692133422 c:\users\nperez\desktop\listas_int\lista.h
+	"nodo.h"
+
+1714860553 source:c:\users\nico_\desktop\listas_int\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+	"lista.h"
+
+1714861022 c:\users\nico_\desktop\listas_int\lista.h
+	"nodo.h"
+
+1714859610 c:\users\nico_\desktop\listas_int\nodo.h
+
+1714859935 source:c:\users\nico_\desktop\listas_int\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1714861106 source:c:\users\nico_\desktop\listas_int\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1714860887 source:c:\users\nico_\desktop\listas_int\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"persona.h"
+
+1714860887 c:\users\nico_\desktop\listas_int\persona.h
+
