@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1716171031 source:c:\users\nico_\desktop\arbolavl\arbol.c
+	"arbol.h"
+
+1716171026 c:\users\nico_\desktop\arbolavl\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1716170511 source:c:\users\nico_\desktop\arbolavl\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1780167990 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\arbolavl\arbol.c
+	"arbol.h"
+
+1780167990 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\arbolavl\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1780168063 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\arbolavl\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+

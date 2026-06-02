@@ -126,3 +126,67 @@
 	"pasajero.h"
 	"destino.h"
 
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\aeropuerto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+	"avion.h"
+	"aeropuerto.h"
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\lista.h
+	"nodo.h"
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\nodo.h
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\avion.h
+	"lista.h"
+	"pasajero.h"
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\pasajero.h
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\aeropuerto.h
+	"avion.h"
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\avion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+	"lista.h"
+
+1779738720 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\destino.h
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\destino.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destino.h"
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"aeropuerto.h"
+	"avion.h"
+	"pasajero.h"
+	"destino.h"
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"nodo.h"
+
+1779738720 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\06 - clase (listas genericas - callbacks)\pre_parcial\pre_parcial\pasajero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pasajero.h"
+
