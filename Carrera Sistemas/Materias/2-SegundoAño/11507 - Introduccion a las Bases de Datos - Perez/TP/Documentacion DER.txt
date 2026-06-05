@@ -1,0 +1,17 @@
+Para reutilización de atributos comunes se utiliza la entidad "Personas", la cual es generalizada por las entidades "Jugadores" y "Usuarios". De esta manera se evita la duplicación de información como nombre, apellido, DNI y teléfono, aplicando principios básicos de normalización.
+
+La entidad "Usuarios" representa a los coleccionistas registrados en la plataforma virtual de la empresa. Cada usuario puede registrar las figuritas que posee, administrar su colección personal y realizar intercambios con otros usuarios.
+
+La información de las figuritas que posee cada usuario se almacena en la entidad "Colecciones", la cual se relaciona con "Figuritas" mediante una tabla intermedia para modelar correctamente una relación de muchos a muchos. Esto permite que una misma figurita pueda estar presente en múltiples colecciones y que una colección contenga múltiples figuritas.
+
+La entidad "Intercambios" registra las operaciones de intercambio realizadas entre usuarios. Su objetivo es mantener un historial de las transacciones efectuadas dentro de la plataforma, permitiendo conocer qué usuarios participaron y qué figuritas estuvieron involucradas en cada intercambio.
+
+La entidad "Figuritas" almacena la información específica de cada figurita, incluyendo su número, tipo, rareza, descripción, el álbum al que pertenece y, cuando corresponda, el jugador representado. A su vez, cada jugador se encuentra asociado a una selección nacional.
+
+La entidad "Selecciones" almacena la información de los equipos, mientras que la entidad "Jugadores" registra los futbolistas pertenecientes a cada selección.
+
+La relación entre "Álbumes" y "Selecciones" se implementa mediante una tabla intermedia, permitiendo que un álbum incluya múltiples selecciones y facilitando futuras extensiones del modelo.
+
+La entidad "Paquetes_de_figuritas" representa los sobres comercializados por la empresa. Cada paquete se encuentra asociado a un álbum determinado e indica la cantidad de figuritas que contiene. No se modela una relación directa entre paquetes y figuritas específicas debido a que el contenido de los sobres es aleatorio. De esta forma, la composición exacta de las figuritas se determina al momento de generar o abrir el paquete, preservando el comportamiento real del sistema.
+
+
