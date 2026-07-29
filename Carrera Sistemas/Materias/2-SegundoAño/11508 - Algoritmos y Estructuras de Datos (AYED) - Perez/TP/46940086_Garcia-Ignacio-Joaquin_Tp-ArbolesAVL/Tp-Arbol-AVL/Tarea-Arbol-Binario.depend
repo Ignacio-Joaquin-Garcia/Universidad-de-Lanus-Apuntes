@@ -49,3 +49,32 @@
 	"Persona.h"
 	"Arbol.h"
 
+1780266008 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"Arbol.h"
+
+1780264066 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\arbol.h
+
+1780169296 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\float.c
+	<stdio.h>
+	<stdlib.h>
+	"Float.h"
+
+1780273044 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\float.h
+
+1780266069 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Float.h"
+	"Persona.h"
+	"Arbol.h"
+
+1780169261 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\persona.h
+
+1780172807 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\tp\46940086_garcia-ignacio-joaquin_tp-arbolesavl\tp-arbol-avl\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Persona.h"
+

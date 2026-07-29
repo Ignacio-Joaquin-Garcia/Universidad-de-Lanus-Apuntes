@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1783976800 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"Lista.h"
+
+1783976767 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Utiles.h"
+	"Alumnos.h"
+	"Inmueble.h"
+	"Lista.h"
+	"Cola.h"
+	"ArbolBinario.h"
+
+1783976233 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\lista.h
+	"Nodo.h"
+
+1783626931 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\nodo.c
+	<stdio.h>
+	<stdlib.h>
+	"Nodo.h"
+
+1783626683 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\nodo.h
+
+1783038348 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumnos.h"
+
+1783038348 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\alumnos.h
+
+1783113104 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\inmueble.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Inmueble.h"
+
+1783112836 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\inmueble.h
+
+1783626683 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\cola.c
+	<stdio.h>
+	<stdlib.h>
+	"Cola.h"
+
+1783627044 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\cola.h
+	"Nodo.h"
+
+1783974166 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\arbolbinario.c
+	<stdio.h>
+	<stdlib.h>
+	"ArbolBinario.h"
+
+1783974045 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\arbolbinario.h
+
+1783976233 source:d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\utiles.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Utiles.h"
+
+1783975326 d:\facultad\unla\carrera sistemas\materias\2-segundoaño\11508 - algoritmos y estructuras de datos (ayed) - perez\practica final\practica-final\utiles.h
+

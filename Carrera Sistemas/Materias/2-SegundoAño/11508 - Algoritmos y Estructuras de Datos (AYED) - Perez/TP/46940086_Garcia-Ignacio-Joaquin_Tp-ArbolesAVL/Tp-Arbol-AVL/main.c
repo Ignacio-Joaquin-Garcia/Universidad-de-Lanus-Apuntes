@@ -142,5 +142,9 @@ int main()
     printf("Nodo Minimo del Arbol (Segun Edad): %s\n", getNombre(getDato(obtenerMinNodo(arbolPersonasBalanceado))));
     printf("Nodo Maximo del Arbol (Segun Edad): %s\n\n", getNombre(getDato(obtenerMaxNodo(arbolPersonasBalanceado))));
 
+
+    printf("Muestra de la creacion del arbol en PreOrden:\n\n");
+    mostrarArbolPreorden(arbol, mostrarFloatGenerico);
+
     return 0;
 }
