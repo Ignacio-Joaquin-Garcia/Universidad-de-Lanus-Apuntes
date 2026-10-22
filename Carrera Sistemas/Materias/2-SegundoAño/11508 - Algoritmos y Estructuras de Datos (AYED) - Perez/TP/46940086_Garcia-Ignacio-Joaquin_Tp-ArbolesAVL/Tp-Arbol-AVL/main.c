@@ -146,5 +146,11 @@ int main()
     printf("Muestra de la creacion del arbol en PreOrden:\n\n");
     mostrarArbolPreorden(arbol, mostrarFloatGenerico);
 
+    int num = 20;
+    int * numPuntero = &num;
+    printf("NUM: %d\n", num);
+    printf("PUNTERO: %x\n", numPuntero);
+    printf("PUNTERO NUM: %d\n", *numPuntero);
+
     return 0;
 }

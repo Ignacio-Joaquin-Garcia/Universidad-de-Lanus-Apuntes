@@ -71,11 +71,11 @@ proc_alta: BEGIN
 END proc_alta//
 DELIMITER ;
 
-
 SET @o_resultado = 0; # En SET se Infieren el Tipo (Operador Morsa :=)
 SET @o_mensaje = ''; 
 CALL alta_insumo("Carbon", "Carboncito", 2, @o_resultado, @o_mensaje);
 SELECT @o_resultado, @o_mensaje;
+DROP PROCEDURE IF EXISTS alta_insumo;
 
 ## BAJAS
 DELIMITER //
@@ -130,17 +130,88 @@ proc_baja: BEGIN
 END//
 DELIMITER ;
 
-SET @o_resultado = 0; 
-SET @o_mensaje = ''; 
-CALL baja_insumo(3, @o_resultado, @o_mensaje);
-SELECT @o_resultado, @o_mensaje;
-
 INSERT INTO proveedor (nombre, direccion, telefono) VALUES("speedy", "Burzaco", "11111111");
 INSERT INTO precio_proveedor (insumo_id, proveedor_id, precio_unitario) VALUES(2, 2, 11111);
+CALL baja_insumo(3, @o_resultado, @o_mensaje);
+SELECT @o_resultado, @o_mensaje;
+DROP PROCEDURE IF EXISTS baja_insumo;
 
-## MODIFICACIONES
+
+## MODIFICACIONES (TOTAL, No parcial)
 DELIMITER //
+CREATE PROCEDURE modificar_insumo(IN p_id INT, IN p_nombre VARCHAR(45), IN p_descripcion TINYTEXT, IN p_cantidad_disponible FLOAT, OUT o_resultado INT, OUT o_mensaje VARCHAR(200))
+modif_proc: BEGIN
+	### -> VARIABLES
 
 
+	### -> Si ocurre un error inesperado de MySQL
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		SET o_resultado = -99;
+		SET o_mensaje = 'Ocurrió un error inesperado al procesar la operación';
+	END;
+    
+    
+    ### -> Reiniciar Variables de Salida
+	SET o_resultado = 0;
+    SET o_mensaje = '';
+    
+    
+    ### -> VALIDACIONES
+    ## ID Invalido
+	IF p_id < 0 THEN
+		SET o_resultado = -1;
+		SET o_mensaje = 'Ocurrió un error, El ID ingresado no es valido';
+        
+        LEAVE modif_proc;
+	END IF;
+	## ID Matchea con un Insumo
+    IF ((SELECT COUNT(*) FROM insumo WHERE id = p_id) != 1) THEN
+		SET o_resultado = -1;
+		SET o_mensaje = 'Ocurrió un error, El ID no coincide con un insumo valido';
 
+        LEAVE modif_proc;
+    END IF;
+    ## Parametros a cambiar validos
+    IF (p_nombre IS NULL) OR (p_descripcion IS NULL) OR (p_cantidad_disponible IS NULL) THEN
+		SET o_resultado = -2;
+		SET o_mensaje = 'Ocurrió un error, Alguno de los Parametros es Nulo';
+		
+        LEAVE modif_proc;
+	END IF;
+	IF (TRIM(p_nombre) = '') OR (TRIM(p_descripcion) = '') THEN
+		SET o_resultado = -2;
+		SET o_mensaje = 'Ocurrió un error, Alguno de los Parametros es Vacio';
+		
+        LEAVE modif_proc;
+	END IF;
+    IF (p_cantidad_disponible < 0) THEN
+		SET o_resultado = -3;
+		SET o_mensaje = 'Ocurrió un error, La cantidad disponible no puede ser negativa';
+		
+        LEAVE modif_proc;
+	END IF;
+    IF (CHAR_LENGTH(p_nombre) > 45) OR (CHAR_LENGTH(p_descripcion) > 255) THEN
+		SET o_resultado = -4;
+		SET o_mensaje = 'Ocurrió un error, Overflow en los parametros pasados';
+		
+        LEAVE modif_proc;
+	END IF;
+    ## No Debe existir otro nombre igual al que se quiere cambiar
+    IF ((SELECT COUNT(*) FROM insumo WHERE nombre = p_nombre AND id != p_id) > 0) THEN
+		SET o_resultado = -5;
+		SET o_mensaje = 'Ocurrió un error, Ya existe otro insumo con ese nombre';
+		
+        LEAVE modif_proc;
+    END IF;
+    
+    ### -> MODIFICAR
+	UPDATE insumo
+    SET nombre = p_nombre, descripcion = p_descripcion, cantidad_disponible = p_cantidad_disponible
+    WHERE id = p_id;
+END//
 DELIMITER ;
+
+CALL modificar_insumo(2, "ME", "ME", 2, @o_resultado, @o_mensaje);
+SELECT @o_resultado, @o_mensaje;
+DROP PROCEDURE IF EXISTS modificar_insumo;

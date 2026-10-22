@@ -1,0 +1,19 @@
+Repositorio Github de ejemplo
+Requisitos de finalización
+
+Buenas tardes,
+
+Les dejo el repositorio de Github con el código de ejemplo para Ventas y Productos, con endpoints de GET y POST para ambos recursos. Recuerden que el laboratorio también menciona los endpoints de PUT y DELETE, que deberán agregar a esta API.
+
+Repositorio: https://github.com/Gonzacerbelli/python-unla-lab-2026
+
+Podrán clonarlo utilizando los comandos GIT desde una terminal (Powershell, Bash, CMD), o bien descargando el .ZIP y descomprimiendolo en sus computadoras. Luego abren la carpeta con el Visual Studio Code y en la terminal integrada deberán correr los comandos mencionados en el archivo Readme.md.
+
+Con respecto a la estructura de archivos de la aplicación, en este ejemplo tenemos la siguiente estructura:
+
+    app.py: tiene la configuración básica de la aplicación, los imports de fastapi (librería de API) y los endpoints con sus verbos y su lógica. También lo aconsejable es tener una variable de sesión de base de datos (db_session en este caso) que permitirá interactuar con la Base de Datos si necesidad de estar declarando o definiendo la misma en cada endpoint.
+    database.py: este archivo se encarga de definir con SQLAlchemy cual será el motor de base de datos a utilizar y en mi caso, también tengo definido los modelos y clases de las tablas de la base de datos, con sus atributos, los tipos de datos y relaciones. Esto último podría estar en un archivo models.py si quisieran.
+    database.db: es el archivo propio de la base de datos, se genera por única vez cuando corremos "fastapi run". Pueden descargar SQLite DB Browser para poder ver la base de datos, su estructura y contenido al estilo MySQL Workbench.
+    Readme.md: archivo markdown que describe los comandos a utilizar para configurar, instalar librerías y correr de manera local la aplicación o API.
+    schema.py: en este archivo definimos y declaramos las clases de datos necesarias por "pydantic", librería que utiliza "fastapi" para el tipado de datos sobre lo que se reciba o retorne en cada endpoint.
+    requirements.txt: se utiliza para declarar las librerías a utilizar en la aplicación o API que construimos. Cada línea representa una librería distinta que puede ser encontrada en PyPI, repositorio de librerías de Python. En este repositorio se puede buscar una libería y encontrarán documentación, códigos de ejemplo, vulnerabilidades conocidas, versiones y demás.
